@@ -1,0 +1,168 @@
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #000000, #0d0d0d, #1a0033);
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+}
+
+.container {
+  text-align: center;
+  padding: 40px;
+}
+
+.dashboard-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.card {
+  background: rgba(20, 20, 30, 0.95);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(120, 0, 255, 0.4);
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+
+.xp-bar {
+  width: 100%;
+  background-color: #333;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.xp-fill {
+  height: 15px;
+  border-radius: 8px;
+  transition: width 0.5s ease-in-out;
+}
+
+.xp-level {
+  background: linear-gradient(to right, #00c6ff, #6a0dad);
+}
+
+.button {
+  background: linear-gradient(45deg, #4b0082, #6a0dad);
+  border: none;
+  padding: 8px 14px;
+  margin: 6px 4px;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(150, 0, 255, 0.6);
+}
+
+input, select {
+  padding: 6px 8px;
+  margin: 5px 2px;
+  border-radius: 5px;
+  border: 1px solid #444;
+  background: #111;
+  color: white;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.skill-circle {
+  width: 90px;
+  text-align: center;
+  margin: 10px;
+}
+
+.skill-circle svg {
+  width: 80px;
+  height: 80px;
+  transform: rotate(-90deg);
+}
+
+
+.circle-bg {
+  fill: none;
+  stroke: #222;
+  stroke-width: 4;
+}
+
+
+.circle {
+  fill: none;
+  stroke: #00c6ff;
+  stroke-width: 4;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.5s;
+}
+
+
+.circle-text {
+  font-size: 16px;
+  text-anchor: middle;
+  fill: #fff;
+  dominant-baseline: middle;
+}
+
+
+.habit-card {
+  border: 2px solid #ff9900;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.habit-card p {
+  margin: 6px 0;
+  font-size: 1rem;
+}
+
+
+.daily-bonus-toast {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  background: #ffeb3b;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  animation: fadeInOut 2s forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-20px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+
+
+.level-up-toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(45deg,#00ffcc,#6a0dad);
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  color: #000;
+}
