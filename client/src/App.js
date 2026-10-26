@@ -41,7 +41,7 @@ function App() {
 
   useEffect(() => {
     if (loggedIn) {
-      axios.get(`http://localhost:5000/user/${username}`)
+      axios.get(`http://18.234.87.192:5000/user/${username}`)
         .then((res) => {
           const user = res.data;
           setXp(user.xp);
@@ -54,12 +54,12 @@ function App() {
   }, [loggedIn, username]);
 
   const login = async () => {
-    await axios.post("http://localhost:5000/login", { username, password });
+    await axios.post("http://18.234.87.192:5000/login", { username, password });
     setLoggedIn(true);
   };
 
   const register = async () => {
-    await axios.post("http://localhost:5000/register", { username, password });
+    await axios.post("http://18.234.87.192:5000/register", { username, password });
     login();
   };
 
@@ -76,14 +76,14 @@ function App() {
   }
 
   try {
-    await axios.post("http://localhost:5000/add-task", {
+    await axios.post("http://18.234.87.192:5000/add-task", {
       username,
       name: taskName,
       xp: Number(taskXP),
       skill: taskSkill,
     });
 
-    const userRes = await axios.get(`http://localhost:5000/user/${username}`);
+    const userRes = await axios.get(`http://18.234.87.192:5000/user/${username}`);
     setTasks(userRes.data.tasks);
 
     
@@ -101,7 +101,7 @@ function App() {
     setCompleting(true);
 
     try {
-      const res = await axios.post("http://localhost:5000/complete-task", {
+      const res = await axios.post("http://18.234.87.192:5000/complete-task", {
         username,
         taskId: task._id,
       });
